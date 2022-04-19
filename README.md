@@ -39,6 +39,11 @@
     
     ①홈플러스 쇼핑몰(86.12점, 종합쇼핑몰), ②롯데하이마트(85.54점, 가전), ③신세계몰(85.5점, 종합쇼핑몰)이 종합평가 순위 1, 2, 3위를 차지했다.
     
+    ```
+    select 쇼핑몰구분, 쇼핑몰명, 전체평가, dense_rank() over(order by 전체평가 asc) 순위
+    from shop100
+    where 평가년도 = 2019; -- 전체평가 점수가 낮은 순으로 정렬
+    ```
     <p align = "center"><img src="Images/2019전체평가순위(낮은순).png"></p>
     
     한편, 전체평가에서 낮은 점수를 받은 쇼핑몰은 주로 ‘해외숙박예약’과 ‘해외구매대행’ 분야에서 나타났다.
@@ -52,7 +57,7 @@
     where 순위 = 1
     order by 전체평가 desc;
     ```
-    <p align = "center"><img src="Images/2019분야별1.png"></p>
+    <p align = "center"><img src="Images/2019분야별1위.png"></p>
     
     
     
