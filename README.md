@@ -88,4 +88,13 @@
     
     <p align = "center"><img src="Images/2019소비자보호평가1위.png"></p>
     
-    <div align = "center">전자상거래관련법 준수여부를 보는 ‘소비자보호평가(50점)’에서 ‘롯데하이마트’와 ‘CJ몰’이 49점으로 가장 높은 점수를 받았다.</
+    <div align = "center">전자상거래관련법 준수여부를 보는 ‘소비자보호평가(50점)’에서 ‘롯데하이마트’와 ‘CJ몰’이 49점으로 가장 높은 점수를 받았다.</div></br>
+    
+    ```
+    select 쇼핑몰명, 소비자보호평가, dense_rank() over (order by 소비자보호평가 asc) 순위
+    from shop100
+    where 평가년도 = 2019; -- 소비자보호평가 점수가 낮은 순으로 정렬
+    ```
+    
+    <p align = "center"><img src="Images/소비자보호평가낮은2019.png"></p>
+    
