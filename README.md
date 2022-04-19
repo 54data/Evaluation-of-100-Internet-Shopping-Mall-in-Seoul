@@ -16,7 +16,7 @@
 3. 컬럼정보
 
 <p align = "center">
-    <img src="컬럼정보.png">
+    <img src="Images/컬럼정보.png">
 </p>
 
 ### 3. 데이터 분석
