@@ -46,11 +46,13 @@
     - 2019년도 평가 결과 – 쇼핑몰구분(12개의 분야)별 1위 업체
     ```
     select *
-from (select 쇼핑몰구분, 쇼핑몰명, 전체평가, dense_rank() over(partition by 쇼핑몰구분 order by 전체평가 desc) 순위
-        from shop100
-        where 평가년도 = 2019)
-where 순위 = 1
-order by 전체평가 desc;
-```
+    from (select 쇼핑몰구분, 쇼핑몰명, 전체평가, dense_rank() over(partition by 쇼핑몰구분 order by 전체평가 desc) 순위
+            from shop100
+            where 평가년도 = 2019)
+    where 순위 = 1
+    order by 전체평가 desc;
+    ```
+    <p align = "center"><img src="Images/2019분야별1.png"></p>
+    
     
     
