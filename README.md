@@ -16,8 +16,7 @@
 3. 컬럼정보
 
 <div align="center">
-    ![컬럼정보](Images/컬럼정보.png)
-    
+![컬럼정보](Images/컬럼정보.png)
 </div>
 
 ### 3. 데이터 분석
