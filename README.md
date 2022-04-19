@@ -292,7 +292,32 @@
     where 평가년도 = 2020
     order by 쇼핑몰명;
     ```
-    - 총 83개
-    - 도메인명은 같지만 쇼핑몰명이 다르게 표시된 것, 영문이 한글로 표시된 것, 공백 포함으로 인해 검색이 안 되는 데이터들이 검색되도록 변경해주었다.</br>
-
+    
+    <div align = "center">총 83개</br>
+    도메인명은 같지만 쇼핑몰명이 다르게 표시된 것, 영문이 한글로 표시된 것, 공백 포함으로 인해 검색이 안 되는 데이터들이 검색되도록 변경해주었다.</div></br>
+    
     - 2019년도와 2020년도 모두 평가된 쇼핑몰의 전체평가 등수 및 순위변동
+    ```
+    select a.쇼핑몰명, a.순위 as "2019순위", b.순위 as "2020순위", 
+           case when (a.순위 - b.순위) > 0 then '상승 ' || '(▲' ||(a.순위 - b.순위) || ')'
+                 when (a.순위 - b.순위) < 0 then '하락 ' || '(▼' || ABS(a.순위 - b.순위) || ')'
+                 else '유지 (-)' end as 순위변동
+    from (select case when 쇼핑몰명 like '갤러리아%' then '갤러리아몰'
+                    when 쇼핑몰명 like '더블유%' then 'W쇼핑'
+                    when 쇼핑몰명 like '아모레퍼시픽%' then '아모레퍼시픽몰'
+                    when 쇼핑몰명 like '%하이마트' then '하이마트'
+                    when 쇼핑몰명 like '홈플러스%' then '홈플러스'
+                    when 쇼핑몰명 like '롯데닷컴%' then '롯데온'
+                    when 쇼핑몰명 like '전자랜드%' then '전자랜드'
+                    else 쇼핑몰명 end as 쇼핑몰명, rank() over(order by 전체평가 desc) 순위
+        from shop100
+        where 평가년도 = 2019) a
+        join (select case when 쇼핑몰명 like 'CJ mall' then 'CJmall'
+                    when 쇼핑몰명 like '%라걸' then '라걸'
+                    when 쇼핑몰명 like '%아싸컴%' then '아싸컴'
+                    else 쇼핑몰명 end as 쇼핑몰명, rank() over(order by 전체평가 desc) 순위
+        from shop100
+        where 평가년도 = 2020) b
+        on a.쇼핑몰명 = b.쇼핑몰명
+    order by 2;
+    ```
