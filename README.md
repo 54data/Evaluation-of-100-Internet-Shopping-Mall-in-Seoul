@@ -98,3 +98,17 @@
     
     <p align = "center"><img src="Images/소비자보호평가낮은2019.png"></p>
     
+    <div align = "center">한편, 2019년도부터 신규로 평가대상에 포함된 해외숙박예약 사이트들은 소비자보호평가 점수가 낮은 편이었다.</br>
+    실제로 평가대상 6곳 중 사업자 정보를 제대로 표기한 곳은 2곳에 불과하고, 사이트 내에서 회원탈퇴가 가능한 곳도 2곳 밖에 없었다.</div></br>
+    
+    - 2019년도 평가 결과 – 이용자만족평가 순위
+    ```
+    select 쇼핑몰명, 이용자만족평가, dense_rank() over (order by 이용자만족평가 desc) 순위
+    from shop100
+    where 평가년도 = 2019;
+    ```
+    
+    <p align = "center"><img src="Images/이용만족2019.png"></p>
+    
+    
+    
