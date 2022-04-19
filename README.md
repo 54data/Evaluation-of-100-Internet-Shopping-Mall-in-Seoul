@@ -35,10 +35,10 @@
     where 평가년도 = 2019; -- 전체평가 점수가 높은 순으로 정렬
     ```
     
-    <p align = "center"><img src="Images/2019전체평가순위.png" width="500"></p>
+    <p align = "center"><img src="Images/2019전체평가순위.png" width="300"></p>
     
     ①홈플러스 쇼핑몰(86.12점, 종합쇼핑몰), ②롯데하이마트(85.54점, 가전), ③신세계몰(85.5점, 종합쇼핑몰)이 종합평가 순위 1, 2, 3위를 차지했다.
     
-    <p align = "center"><img src="Images/2019전체평가순위(낮은순).png" width=500"></p>
+    <p align = "center"><img src="Images/2019전체평가순위(낮은순).png" width=300"></p>
     
     
