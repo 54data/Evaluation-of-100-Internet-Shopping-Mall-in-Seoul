@@ -110,5 +110,31 @@
     
     <p align = "center"><img src="Images/이용만족2019.png"></p>
     
+    <div align = "center">이용자만족평가(40점)’ 항목은 교보문고가 28.91점으로 1위를 하였고, 이외에 예스24, 알라딘이 소비자들로부터 높은 평가를 받았다.
+    </div></br>
     
+    ```
+    select 쇼핑몰구분, trunc(avg(이용자만족평가), 2) 이용자만족평가평균, dense_rank() over(order by avg(이용자만족평가) desc) 순위
+    from shop100
+    where 평가년도 = 2019
+    group by 쇼핑몰구분;
+    ```
     
+    <p align = "center"><img src="Images/이용만족2019구분별.png"></p>
+    
+    <div align = "center">‘이용자만족평가(40점)’ 항목을 쇼핑몰구분별로 평균을 내면 앞서 교보문고와 예스24, 알라딘이 전체 쇼핑몰 중에서 소비자들에게 높은 평가를 받은 것처럼,</br>
+    ‘도서’ 분야가 28.08점으로 평균점수가 가장 높았고, 다음으로는 ‘식품’, ‘종합쇼핑몰’, ‘화장품’ 순이다.</div></br>
+    
+    - 2019년도 평가 결과 – 피해발생평가 순위
+    ```
+    select 쇼핑몰명, 피해발생평가, dense_rank() over(order by 피해발생평가 desc) 순위
+    from shop100
+    where 평가년도 = 2019;
+    
+    select 피해발생평가, count(*) 해당쇼핑몰수
+    from shop100
+    where 평가년도 = 2019
+    group by 피해발생평가;
+    ```
+    
+    <p align = "center"><img src="Images/피해발생2019.png"></p>
