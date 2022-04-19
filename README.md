@@ -15,7 +15,7 @@
 
 3. 컬럼정보
 
-<div align="center"><image src="Images/컬럼정보.png></image></div>
+<p align="center"><image src="Images/컬럼정보.png></image></p>
 
 ### 3. 데이터 분석
 1. 테이블 생성 : 테이블명 shop100
