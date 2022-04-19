@@ -168,7 +168,7 @@
     where 평가년도 = 2020; -- 전체평가 점수가 낮은 순으로 정렬
     ```
     
-    <p align = "center"><img src="Images/종합평가2020.png"></p>
+    <p align = "center"><img src="Images/종합평가2020낮은.png"></p>
     
     <div align = "center">한편, 전체평가에서 낮은 점수를 받은 쇼핑몰은 주로 ‘해외숙박예약’과 ‘해외구매대행’ 분야에서 나타났다.</div></br>
     
