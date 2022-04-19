@@ -137,4 +137,4 @@
     group by 피해발생평가;
     ```
     
-    <p align = "center"><img src="Images/피해발생2019.png"></p>
+    <p align = "center"><img src="Images/피해발생 2019.png"></p>
